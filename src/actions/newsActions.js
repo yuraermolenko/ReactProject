@@ -8,11 +8,12 @@ export function loadMore(){
 export function loadNews() { 
     // событие начала загрузки
     dispatcher.dispatch({
-        type: 'LOAD_START'
+        type: 'LOAD_START',
+       
     }) 
 
     // асинхронная обработка события 
-    let promise = fetch('D:\ReactJS_Rroject\data.json')
+    let promise = fetch('data/data.json')
         .then(function(response) { 
             return response.json(); 
         }).then(function(json){
@@ -22,7 +23,7 @@ export function loadNews() {
             //событие окончания загрузки
             dispatcher.dispatch({
                 type: 'LOAD_END', 
-                json
+                data
 
                 })
                 })

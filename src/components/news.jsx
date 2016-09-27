@@ -24,7 +24,7 @@ class News extends React.Component {
 
     
     componentWillMount() {
-        //newsActions.loadNews();
+        newsActions.loadNews();
         // обработчик события начала загрузки
         newsStore.on('loadStart', () => {
             this.setState({ news: newsStore.getNews() })
